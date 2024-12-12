@@ -6,7 +6,7 @@ import math, random, copy, datetime
 # ===============================
 
 # 1. Travel Times
-travel_df = pd.read_csv('/Users/tianyixiao/Downloads/Universal Studios.xlsx - travel time(mins).csv', index_col=0)
+travel_df = pd.read_csv('Universal Studios.xlsx - travel time(mins).csv', index_col=0)
 # Convert the DataFrame to a nested dict: travel_times[from][to] = time
 travel_times = {}
 for from_loc in travel_df.index:
@@ -15,7 +15,7 @@ for from_loc in travel_df.index:
         travel_times[from_loc][to_loc] = travel_df.loc[from_loc, to_loc]
 
 # 2. Play Times
-play_df = pd.read_csv('/Users/tianyixiao/Downloads/Universal Studios.xlsx - play time(mins).csv', 
+play_df = pd.read_csv('Universal Studios.xlsx - play time(mins).csv', 
                       header=None, # No header in the file
                       names=["Attraction", "PlayTime"], # Assign your own column names
                       sep=",") # or sep="\t" if tab-separated
@@ -26,7 +26,7 @@ for idx, row in play_df.iterrows():
     ride_durations[attraction] = duration
 
 # 3. Wait Times
-wait_df = pd.read_csv('/Users/tianyixiao/Downloads/Universal Studios.xlsx - 11.9data.csv')
+wait_df = pd.read_csv('Universal Studios.xlsx - 11.9data.csv')
 
 # Parse the timestamps from the columns (excluding 'Ride Name')
 time_cols = [c for c in wait_df.columns if c != "Ride Name"]
