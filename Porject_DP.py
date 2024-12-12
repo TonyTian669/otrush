@@ -2,7 +2,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 # Load Excel data
-file_path = 'C:/Users/Yijie Zhang/Desktop/各项目行程时间.xlsx'  # Replace with your file path
+file_path = '各项目行程时间.xlsx'  # Replace with your file path
 travel_times = pd.read_excel(file_path, sheet_name='各项目行程时间', index_col=0)
 queue_times = pd.read_excel(file_path, sheet_name='项目排队时间')
 play_times = pd.read_excel(file_path, sheet_name='项目游玩时间', index_col=0)
